@@ -58,10 +58,10 @@ namespace GameChallenge
                     Attack();
                     break;
                 case 2:
-                    Flee();
+                    Synthesize();
                     break;
                 case 3:
-                    Hide();
+                    Escape();
                     break;
                 default:
                     break;
@@ -87,22 +87,22 @@ namespace GameChallenge
 
         private void Flee()
         {
-            throw new NotImplementedException();
+            
         }
 
-        private void Hide()
+        private void Sythesize()
         {
-            throw new NotImplementedException();
+            
         }
 
-        private void EndGame()
+        private void Escape()
         {
-            throw new NotImplementedException();
+            
         }
 
         private void CreateHero()
         {
-            Console.WriteLine("What's your name, soldier?");
+            Console.WriteLine("What's your name, soldier?\n");
 
             string name = Console.ReadLine();
 
