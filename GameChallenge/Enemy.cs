@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameChallenge
 {
-    class Program
+    class Enemy : Character
     {
-        static void Main(string[] args)
-        {
-            ProgramUI program = new ProgramUI();
-            program.Run();
-        }
+
     }
 }

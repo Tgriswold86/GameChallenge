@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameChallenge
 {
-    class Program
+    class Hero : Character
     {
-        static void Main(string[] args)
-        {
-            ProgramUI program = new ProgramUI();
-            program.Run();
-        }
+        public int NumberOfLives { get; set; }
     }
 }
