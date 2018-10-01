@@ -49,10 +49,13 @@
     <Compile Include="Hero.cs" />
     <Compile Include="HeroRepository.cs" />
     <Compile Include="ICharacter.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="NanoHeal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumGen.cs" />
+    <Compile Include="Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
