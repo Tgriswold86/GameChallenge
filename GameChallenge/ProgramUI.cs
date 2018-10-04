@@ -9,11 +9,11 @@ namespace GameChallenge
     {
         private HeroRepository _heroRepo = new HeroRepository();
         private EnemyRepository _enemyRepo = new EnemyRepository();
+        
         public void Run()
         {
             SetUpGame();
             RunGame();
-            EndGame();
         }
         private void SetUpGame()
         {
@@ -24,64 +24,69 @@ namespace GameChallenge
         }
         private void RunGame()
         {
+            bool ran = false;
             var hero = _heroRepo.CharacterDetails();
             var enemy = _enemyRepo.CharacterDetails();
-            while (hero.IsAlive && enemy.IsAlive)
+            while (hero.CheckIfAlive(hero.Health) && enemy.CheckIfAlive(enemy.Health))
             {
-                PromptPlayer();
+                var input = PromptPlayer();
+                switch (input)
+                {
+                    case 1:
+                        Attack();
+                        break;
+                    case 2:
+                        ran = true;
+                        goto Runner;
+                    default:
+                        break;
+                }
+            }
+            EndGame();
+            Runner:
+           if(ran)
+            {
+                 Flee();
+                ran = false;
             }
         }
-        private void PromptPlayer()
+        private int PromptPlayer()
         {
             Console.WriteLine("Choose your next action:\n" +
                 "1. Attack\n" +
-                "2. Heal\n" +
-                "3. Hide");
+                "2. Flee");
             var input = int.Parse(Console.ReadLine());
-            HandleBattleInput(input);
-        }
-        private void HandleBattleInput(int input)
-        {
-            switch (input)
-            {
-                case 1:
-                    Attack();
-                    break;
-                case 2:
-                    Dodge();
-                    break;
-                case 3:
-                    Flee();
-                    break;
-                default:
-                    break;
-            }
+            return input;
+            
         }
         private void Attack()
         {
+           
             // Get characters attack values
             var hero = _heroRepo.CharacterDetails();
             var enemy = _enemyRepo.CharacterDetails();
             //Get hero attack value
             _enemyRepo.TakeDamage(hero.ATKPower);
+            _heroRepo.TakeDamage(enemy.ATKPower);
             // Get new health points of enemy
             Console.WriteLine($"{enemy.Name}'s health is {enemy.Health}");
+            Console.WriteLine($"{hero.Name}'s health is {hero.Health}");
             // Then, the hero will strike.
             // Then, decrement points from enemy health.
             // Print details
         }
-        private void Dodge()
-        {
-            throw new NotImplementedException();
-        }
 
         private void Flee()
         {
-            
+            Console.WriteLine($"You ran from {_enemyRepo.CharacterDetails().Name}!");
+            Console.ReadLine();
+           
         }
         private void EndGame()
         {
-            throw new NotImplementedException();
+
+            Console.WriteLine($"You defeated {_enemyRepo.CharacterDetails().Name}!");
+            Console.Read();
         }
         private void CreateHero()
         {

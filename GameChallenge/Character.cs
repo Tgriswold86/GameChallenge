@@ -13,5 +13,16 @@ namespace GameChallenge
         public int MaxHealth { get; set; }
         public int ATKPower { get; set; }
         public bool IsAlive { get; set; }
+
+        public bool CheckIfAlive(int health)
+        {
+            bool currentalive = false;
+
+            if (Health > 0)
+            {
+                currentalive = true;
+            }
+            return currentalive;
+        }
     }
 }
