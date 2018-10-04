@@ -108,7 +108,7 @@ namespace GameChallenge
             Console.WriteLine("Here are the details for the enemy:");
             var enemy = _enemyRepo.CharacterDetails();
             Console.WriteLine($"Character Details: " +
-                $"Name: {enemy.Name}\n" +
+            $"Name: {enemy.Name}\n" +
             $"Health: {enemy.Health}\n" +
             $"Attack Power: {enemy.ATKPower}\n");
         }
