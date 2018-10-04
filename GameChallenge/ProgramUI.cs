@@ -35,7 +35,7 @@ namespace GameChallenge
         {
             Console.WriteLine("Choose your next action:\n" +
                 "1. Attack\n" +
-                "2. Flee\n" +
+                "2. Heal\n" +
                 "3. Hide");
             var input = int.Parse(Console.ReadLine());
             HandleBattleInput(input);
@@ -48,10 +48,10 @@ namespace GameChallenge
                     Attack();
                     break;
                 case 2:
-                    Flee();
+                    Dodge();
                     break;
                 case 3:
-                    Hide();
+                    Flee();
                     break;
                 default:
                     break;
@@ -70,13 +70,14 @@ namespace GameChallenge
             // Then, decrement points from enemy health.
             // Print details
         }
-        private void Flee()
+        private void Dodge()
         {
             throw new NotImplementedException();
         }
-        private void Hide()
+
+        private void Flee()
         {
-            throw new NotImplementedException();
+            
         }
         private void EndGame()
         {
@@ -90,7 +91,7 @@ namespace GameChallenge
         }
         private void CreateEnemy()
         {
-            Console.WriteLine("Who's your enemy?\n");
+            Console.WriteLine("Who are we hunting?\n");
             string name = Console.ReadLine();
             _enemyRepo.CreateCharacter(name);
         }

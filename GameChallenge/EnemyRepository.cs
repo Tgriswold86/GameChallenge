@@ -16,8 +16,8 @@ namespace GameChallenge
             {
                 Name = name,
                 IsAlive = true,
-                ATKPower = 10,
-                Health = 100,
+                ATKPower = 8,
+                Health = 50,
             };
         }
 

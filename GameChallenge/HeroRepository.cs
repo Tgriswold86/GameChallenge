@@ -26,7 +26,7 @@ namespace GameChallenge
         }
         public void TakeDamage(int attackDamage)
         {
-            throw new NotImplementedException();
+            _hero.Health -= attackDamage;
         }
     }
 }
