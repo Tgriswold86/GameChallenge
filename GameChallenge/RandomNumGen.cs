@@ -6,9 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameChallenge
-{
-    namespace Engine
-    {
+{ 
         // This is the more complex version
         public static class RandomNumberGenerator
         {

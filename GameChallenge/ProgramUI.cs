@@ -48,9 +48,19 @@ namespace GameChallenge
             var input = int.Parse(Console.ReadLine());
 
             HandleBattleInput(input);
+
+            bool test = int.TryParse(Console.ReadLine(), out input);
+            if (!test || input > 3 || input <= 0)
+            {
+                Console.WriteLine("Thats not one of the options! Try again!");
+                Console.ReadLine();
+                Console.Clear();
+            }
         }
 
-        private void HandleBattleInput(int input)
+       
+
+    private void HandleBattleInput(int input)
         {
             switch (input)
             {
@@ -60,6 +70,7 @@ namespace GameChallenge
                 case 2:
                     Synthesize();
                     break;
+
                 case 3:
                     Escape();
                     break;
@@ -93,6 +104,11 @@ namespace GameChallenge
         private void Sythesize()
         {
             
+        }
+
+        private void NanoHeal(int blood)
+        {
+                _hero.Health += attackDamage;
         }
 
         private void Escape()
