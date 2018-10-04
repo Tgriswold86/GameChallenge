@@ -50,6 +50,7 @@
     <Compile Include="HeroRepository.cs" />
     <Compile Include="ICharacter.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemRepo.cs" />
     <Compile Include="NanoHeal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramUI.cs" />

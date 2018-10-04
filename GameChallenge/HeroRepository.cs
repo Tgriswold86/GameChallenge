@@ -6,31 +6,26 @@ using System.Threading.Tasks;
 
 namespace GameChallenge
 {
-    class HeroRepository : ICharacter
+    class HeroRepository 
     {
         // Field 
-        private Hero _hero;
+        public Hero _hero;
 
 
-        public void CreateCharacter(string name)
+        public void CreateCharacter()
         {
+            Console.Clear();
+            Console.Write("What is your name, soldier? ");
+            var name = Console.ReadLine();
+
             _hero = new Hero
             {
                 Name = name,
-                IsAlive = true,
-                ATKPower =10,
                 Health = 100,
-                NumberOfLives = 3
-            };
-        }
-        public Character CharacterDetails()
-        {
-            return _hero;
-        }
+                ATKPower = 20,
 
-        public void TakeDamage(int attackDamage)
-        {
-            throw new NotImplementedException();
+            };
         }
     }
 }
+

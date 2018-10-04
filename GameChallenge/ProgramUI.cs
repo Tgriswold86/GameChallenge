@@ -52,21 +52,22 @@ namespace GameChallenge
             bool test = int.TryParse(Console.ReadLine(), out input);
             if (!test || input > 3 || input <= 0)
             {
-                Console.WriteLine("Thats not one of the options! Try again!");
+                Console.WriteLine("Don't mess with me, choose one of the correct options.");
                 Console.ReadLine();
                 Console.Clear();
             }
         }
 
-       
 
-    private void HandleBattleInput(int input)
+
+        private void HandleBattleInput(int input)
         {
             switch (input)
             {
                 case 1:
                     Attack();
                     break;
+
                 case 2:
                     Synthesize();
                     break;
@@ -96,19 +97,16 @@ namespace GameChallenge
             // Print details
         }
 
-        private void Flee()
-        {
-            
-        }
 
         private void Sythesize()
         {
+        if _hero.Health <= 20
             
         }
 
         private void NanoHeal(int blood)
         {
-                _hero.Health += attackDamage;
+                hero.Health += attackDamage;
         }
 
         private void Escape()

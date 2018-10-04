@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace GameChallenge
 { 
         // This is the more complex version
-        public static class RandomNumberGenerator
+        public static class RNG
         {
             private static readonly RNGCryptoServiceProvider _generator = new RNGCryptoServiceProvider();
 
@@ -32,4 +32,4 @@ namespace GameChallenge
             }
         }
     }
-}
+

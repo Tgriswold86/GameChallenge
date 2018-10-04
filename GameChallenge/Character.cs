@@ -10,6 +10,7 @@ namespace GameChallenge
     {
         public string Name { get; set; }
         public int Health { get; set; }
+        public int MaxHealth { get; set; }
         public int ATKPower { get; set; }
         public bool IsAlive { get; set; }
     }
