@@ -3,28 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace GameChallenge
 {
-    public class HeroRepository 
+    class HeroRepository : ICharacter
     {
         // Field 
-        public Hero _hero;
-
-
-        public void CreateCharacter()
+        private Hero _hero;
+        public void CreateCharacter(string name)
         {
-            Console.Clear();
-            Console.Write("What is your name, soldier? ");
-            var name = Console.ReadLine();
-
             _hero = new Hero
             {
                 Name = name,
+                IsAlive = true,
+                ATKPower = 10,
                 Health = 100,
-                ATKPower = 20,
-
+                NumberOfLives = 3
             };
+        }
+        public Character CharacterDetails()
+        {
+            return _hero;
+        }
+        public void TakeDamage(int attackDamage)
+        {
+            throw new NotImplementedException();
         }
     }
 }
