@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameChallenge
 {
-    class Hero : Character
+    public class Hero : Character
     {
         public int NumberOfLives { get; set; }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameChallenge
 {
-    abstract class Character
+    public class Character
     {
         public string Name { get; set; }
         public int Health { get; set; }

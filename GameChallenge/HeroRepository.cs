@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameChallenge
 {
-    class HeroRepository 
+    public class HeroRepository 
     {
         // Field 
         public Hero _hero;
@@ -28,4 +28,3 @@ namespace GameChallenge
         }
     }
 }
-
